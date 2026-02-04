@@ -1,0 +1,198 @@
+.discover-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.card-stack {
+  position: relative;
+  height: 600px;
+  perspective: 1000px;
+}
+
+.profile-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profile-image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.profile-info {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.profile-info h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.location {
+  color: #667eea;
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.detail {
+  color: #666;
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.bio {
+  color: #555;
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.match-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 16px;
+}
+
+.match-popup {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  animation: popIn 0.4s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.match-popup h2 {
+  color: #667eea;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.match-popup p {
+  color: #333;
+  margin: 5px 0;
+}
+
+.match-message {
+  color: #667eea !important;
+  font-weight: 600;
+  margin-top: 15px !important;
+}
+
+.swipe-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.btn-swipe {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-pass {
+  background: #f0f0f0;
+  color: #999;
+}
+
+.btn-pass:hover {
+  background: #e0e0e0;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.btn-like {
+  background: #ff6b6b;
+  color: white;
+}
+
+.btn-like:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+}
+
+.swipe-info {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .discover-container {
+    margin: 20px auto;
+  }
+
+  .card-stack {
+    height: 500px;
+  }
+
+  .swipe-buttons {
+    gap: 20px;
+  }
+
+  .btn-swipe {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
