@@ -55,14 +55,14 @@ docker-compose up -d
 The application will:
 - Initialize PostgreSQL database
 - Create tables automatically
-- Start backend API on port 5000
+- Start backend API on port 5001
 - Start frontend on port 3000
 
 ### 4. Access the App
 
 - **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000
-- **Health Check**: http://localhost:5000/api/health
+- **Backend API**: http://localhost:5001
+- **Health Check**: http://localhost:5001/api/health
 
 ### 5. Stop the Application
 
@@ -92,7 +92,7 @@ cd frontend
 npm install
 
 # Create .env file
-REACT_APP_API_URL=http://localhost:5000
+REACT_APP_API_URL=http://localhost:5001
 
 npm start  # Start development server
 ```
